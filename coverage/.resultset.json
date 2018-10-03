@@ -8,6 +8,10 @@
         1,
         2,
         null,
+        1,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/rails_helper.rb": [
@@ -46,8 +50,8 @@
         null,
         null,
         1,
-        15,
-        15,
+        33,
+        33,
         null,
         null,
         null
@@ -304,6 +308,9 @@
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/customer.rb": [
         1,
         1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/application_record.rb": [
@@ -319,12 +326,23 @@
         2,
         2,
         null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/invoice_item.rb": [
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/models/invoice_spec.rb": [
@@ -338,6 +356,11 @@
         2,
         2,
         null,
+        1,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/invoice.rb": [
@@ -347,6 +370,10 @@
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/models/item_spec.rb": [
@@ -358,6 +385,12 @@
         2,
         2,
         null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/item.rb": [
@@ -365,6 +398,11 @@
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/models/merchant_spec.rb": [
@@ -375,11 +413,16 @@
         2,
         2,
         null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/merchant.rb": [
         1,
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -390,11 +433,22 @@
         1,
         2,
         null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/models/transaction.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/requests/api/v1/customer_request_spec.rb": [
@@ -431,6 +485,6 @@
         null
       ]
     },
-    "timestamp": 1538530176
+    "timestamp": 1538530809
   }
 }
