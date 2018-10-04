@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-02T20:38:57-06:00">2018-10-02T20:38:57-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-02T23:23:35-06:00">2018-10-02T23:23:35-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.15%</span></span>
+    (<span class="covered_percent"><span class="green">95.8%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.5
+         1.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>38</b> files in total.
-    <b>235</b> relevant lines. 
-    <span class="green"><b>233</b> lines covered</span> and
-    <span class="red"><b>2</b> lines missed </span>
+    <b>238</b> relevant lines. 
+    <span class="green"><b>228</b> lines covered</span> and
+    <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#65acd532920550ca803925938426b26259e6e421" class="src_link" title="app/controllers/api/v1/customers/transactions_controller.rb">app/controllers/api/v1/customers/transactions_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="red strong">57.14 %</td>
+        <td>15</td>
+        <td>7</td>
+        <td>4</td>
+        <td>3</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -112,12 +112,12 @@
       
       <tr>
         <td class="strong"><a href="#996719098ef6922b7a6bea33680eb99fe5c037cd" class="src_link" title="app/models/invoice.rb">app/models/invoice.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="yellow strong">88.89 %</td>
+        <td>15</td>
+        <td>9</td>
+        <td>8</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -422,12 +422,12 @@
       
       <tr>
         <td class="strong"><a href="#292f511bec2564812e34def9d05b825680462065" class="src_link" title="spec/requests/api/v1/customer_request_spec.rb">spec/requests/api/v1/customer_request_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="yellow strong">88.57 %</td>
         <td>71</td>
         <td>35</td>
-        <td>35</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>31</td>
+        <td>4</td>
+        <td>0.9</td>
       </tr>
       
     </tbody>
@@ -498,11 +498,11 @@
         <div class="source_table" id="65acd532920550ca803925938426b26259e6e421">
   <div class="header">
     <h3>app/controllers/api/v1/customers/transactions_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">57.14 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -521,43 +521,79 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">    invoices = Customer.find(params[:id]).invoices</code>
+          
+          <code class="ruby">    ## REFACTOR ##</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    trans = invoices.map do |invoice|</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">      invoice.transactions</code>
+          <code class="ruby">    invoices = Customer.find(params[:id]).invoices.joins(:transactions)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="missed" data-hits="0" data-linenumber="6">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    binding.pry</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
           
-          <code class="ruby">    render json: trans.flatten</code>
+          
+          <code class="ruby">    transactions = invoices.map do |invoice|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
+          <code class="ruby">      invoice.transactions</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">    end.flatten</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    render json: transactions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    ## REFACTOR ##</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -767,11 +803,11 @@
         <div class="source_table" id="996719098ef6922b7a6bea33680eb99fe5c037cd">
   <div class="header">
     <h3>app/models/invoice.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">88.89 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -839,6 +875,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.invoices_with_a_transaction</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    joins(:transactions)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -3636,11 +3696,11 @@
         <div class="source_table" id="292f511bec2564812e34def9d05b825680462065">
   <div class="header">
     <h3>spec/requests/api/v1/customer_request_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">88.57 %</span> covered</h4>
     <div>
       <b>35</b> relevant lines. 
-      <span class="green"><b>35</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>31</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -4025,8 +4085,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
           
           <code class="ruby">    expect(response).to be_successful</code>
         </li>
@@ -4037,8 +4097,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="66">
+          
           
           <code class="ruby">    customer_transaction_response = JSON.parse(response.body)</code>
         </li>
@@ -4049,14 +4109,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
           
           <code class="ruby">    expect(customer_transaction_response[0][&quot;id&quot;]).to eq(transaction.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
           
           <code class="ruby">    expect(customer_transaction_response[1][&quot;id&quot;]).to eq(transaction2.id)</code>
         </li>

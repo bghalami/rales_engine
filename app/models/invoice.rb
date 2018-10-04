@@ -8,4 +8,8 @@ class Invoice < ApplicationRecord
   validates_presence_of :customer_id,
                         :merchant_id,
                         :status
+
+  def self.invoices_with_a_transaction
+    joins(:transactions)
+  end
 end

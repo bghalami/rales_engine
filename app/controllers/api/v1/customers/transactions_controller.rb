@@ -1,11 +1,6 @@
 class Api::V1::Customers::TransactionsController < ApplicationController
   def index
-    ## REFACTOR ##
-    invoices = Customer.find(params[:id]).invoices.
-    trans = invoices.map do |invoice|
-      invoice.transactions
-    end
-    render json: trans.flatten
+    render json: Transaction.all_for_customer(params[:id])
   end
-  ## REFACTOR ##
+
 end

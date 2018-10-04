@@ -376,6 +376,10 @@
         1,
         null,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/spec/models/item_spec.rb": [
@@ -515,12 +519,12 @@
         null,
         1,
         null,
-        1,
+        0,
         null,
-        1,
+        0,
         null,
-        1,
-        1,
+        0,
+        0,
         null,
         null
       ],
@@ -554,15 +558,18 @@
       "/Users/bghalami/turing/3module/rails_engine/rales_engine/app/controllers/api/v1/customers/transactions_controller.rb": [
         1,
         1,
-        1,
-        1,
-        1,
         null,
         1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1538534337
+    "timestamp": 1538544215
   }
 }
