@@ -10,6 +10,6 @@ class Api::V1::Merchants::FindController < ApplicationController
   private
 
   def merchant_params
-    params.permit(:id, :created_at, :updated_at, :first_name, :last_name)
+    params.permit(:id, :created_at, :updated_at, :name)
   end
 end
