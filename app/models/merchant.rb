@@ -21,5 +21,4 @@ class Merchant < ApplicationRecord
     .order("revenue DESC")
     .limit(count)
   end
-
 end
