@@ -102,3 +102,7 @@ Rales Engine. For when you want someone elses sales data to do things with!
 #### Customers
 
 * `/api/v1/customers/:id/favorite_merchant` returns a merchant where the customer has conducted the most successful transactions
+
+#### Random
+* You can also select a random entry for any of the previously mentioned tables. 
+* For example '/api/v1/customers/random.json' will return a random customer.
