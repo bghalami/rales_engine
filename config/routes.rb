@@ -35,11 +35,26 @@ Rails.application.routes.draw do
         end
       end
 
+      namespace :invoices do
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+      end
+
       scope module: 'items' do
         resources :items, only: [:index, :show] do
           get '/invoice_items', to: 'invoice_items#index'
           get '/merchant', to: 'merchant#show'
           get '/best_day', to: 'best_day#show'
+        end
+      end
+
+      scope module: 'invoices' do
+        resources :invoices, only: [:index, :show] do
+          get '/invoice_items', to: 'invoice_items#index'
+          get '/transactions', to: 'transactions#index'
+          get '/items', to: 'items#index'
+          get '/customer', to: 'customer#show'
+          get '/merchant', to: 'merchant#show'
         end
       end
 
