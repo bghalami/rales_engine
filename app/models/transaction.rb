@@ -5,7 +5,7 @@ class Transaction < ApplicationRecord
                         :credit_card_number,
                         :result
 
-  def all_for_customer(id)
+  def self.all_for_customer(id)
     joins(:invoice)
     .where("invoices.customer_id = #{id}")
   end
