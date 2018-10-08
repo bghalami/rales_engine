@@ -1,6 +1,6 @@
 class Api::V1::Merchants::MostItemsController < ApplicationController
   def index
-    render json: Merchant.all
+    render json: Merchant.top_by_items(most_items_params[:quantity].to_i)
   end
 
   private
