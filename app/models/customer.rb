@@ -17,4 +17,15 @@ class Customer < ApplicationRecord
         WHERE invoices.merchant_id = #{merchant_id}
         AND transactions.result = 'success'")
   end
+
+  def self.favorite_customer(merchant_id)
+    select("customers.*, COUNT(transactions.id) as successful_transactions")
+    .joins(:invoices)
+    .joins("INNER JOIN merchants ON merchants.id = invoices.merchant_id")
+    .joins("INNER JOIN transactions ON transactions.invoice_id = invoices.id")
+    .where("transactions.result = 'success' AND merchants.id = ?", merchant_id)
+    .group(:id)
+    .order("successful_transactions desc")
+    .first
+  end
 end
