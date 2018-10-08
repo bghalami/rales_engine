@@ -23,7 +23,6 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/most_revenue', to: 'most_revenue#index'
         get '/most_items', to: 'most_items#index'
-        get '/best_day', to: 'best_day#show'
       end
 
       scope module: 'merchants' do
@@ -40,6 +39,7 @@ Rails.application.routes.draw do
         resources :items, only: [:index, :show] do
           get '/invoice_items', to: 'invoice_items#index'
           get '/merchant', to: 'merchant#show'
+          get '/best_day', to: 'best_day#show'
         end
       end
 
