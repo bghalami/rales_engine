@@ -8,7 +8,7 @@ class InvoiceItem < ApplicationRecord
                         :unit_price
 
   def self.rev_by_date_all(date)
-    select("(SUM(invoice_items.quantity * invoice_items.unit_price) / 100.00) AS total_revenue")
+    select("SUM(invoice_items.quantity * invoice_items.unit_price) AS total_revenue")
     .joins(:invoice)
     .joins("INNER JOIN transactions ON invoices.id = transactions.invoice_id")
     .where("date_trunc('day',invoices.created_at) = '#{date}'AND transactions.result = 'success'")
@@ -18,7 +18,7 @@ class InvoiceItem < ApplicationRecord
   end
 
   def self.rev_by_date_single(merchant_id, date)
-    select("(SUM(invoice_items.quantity * invoice_items.unit_price) / 100.00) AS revenue")
+    select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
     .joins(:invoice)
     .joins("INNER JOIN merchants ON merchants.id = invoices.merchant_id")
     .joins("INNER JOIN transactions ON invoices.id = transactions.invoice_id")
@@ -29,7 +29,7 @@ class InvoiceItem < ApplicationRecord
   end
 
   def self.total_rev_for_merch(merch_id)
-    select("merchants.id, (SUM(invoice_items.quantity * invoice_items.unit_price) / 100.00) AS revenue")
+    select("merchants.id, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
     .joins(:invoice)
     .joins("INNER JOIN merchants ON merchants.id = invoices.merchant_id")
     .joins("INNER JOIN transactions ON invoices.id = transactions.invoice_id")

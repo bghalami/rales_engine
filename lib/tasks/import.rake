@@ -40,6 +40,7 @@ namespace :import do
     size = CSV.read("./db/data/invoice_items.csv").length
     number_complete = 0.0
     CSV.foreach("./db/data/invoice_items.csv",headers: true) do |row|
+      row["unit_price"] = row["unit_price"].to_f / 100
       InvoiceItem.create!(row.to_h)
       number_complete += 1
       percentage = (number_complete/size) * 100
@@ -66,6 +67,7 @@ namespace :import do
     size = CSV.read("./db/data/items.csv").length
     number_complete = 0.0
     CSV.foreach("./db/data/items.csv",headers: true) do |row|
+      row["unit_price"] = row["unit_price"].to_f / 100
       Item.create!(row.to_h)
       number_complete += 1
       percentage = (number_complete/size) * 100
