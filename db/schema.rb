@@ -1,5 +1,5 @@
 
-ActiveRecord::Schema.define(version: 2018_10_02_051442) do
+ActiveRecord::Schema.define(version: 2018_10_08_050419) do
 
   enable_extension "plpgsql"
 
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_051442) do
 
   create_table "transactions", force: :cascade do |t|
     t.bigint "invoice_id"
-    t.bigint "credit_card_number"
+    t.string "credit_card_number"
     t.text "result"
     t.datetime "credit_card_expiration_date"
     t.datetime "created_at", null: false

@@ -30,5 +30,5 @@ class Merchant < ApplicationRecord
     .group(:id)
     .order("amount desc")
     .limit(qty)
-  end
+  end 
 end
