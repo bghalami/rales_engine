@@ -105,4 +105,4 @@ Rales Engine. For when you want someone elses sales data to do things with!
 
 #### Random
 * You can also select a random entry for any of the previously mentioned tables. 
-* For example '/api/v1/customers/random.json' will return a random customer.
+* For example `/api/v1/merchants/random.json` will return a random merchant.
