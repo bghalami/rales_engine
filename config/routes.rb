@@ -18,6 +18,14 @@ Rails.application.routes.draw do
         get '/revenue', to: 'revenue#index'
       end
 
+      namespace :items do
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/most_revenue', to: 'most_revenue#index'
+        get '/most_items', to: 'most_items#index'
+        get '/best_day', to: 'best_day#show'
+      end
+
       scope module: 'merchants' do
         resources :merchants, only: [:index, :show] do
           get '/items', to: 'items#index'
@@ -25,6 +33,13 @@ Rails.application.routes.draw do
           get '/revenue', to: 'revenue#show'
           get '/favorite_customer', to: 'favorite_customer#show'
           get '/customers_with_pending_invoices', to: 'customers_with_pending_invoices#index'
+        end
+      end
+
+      scope module: 'items' do
+        resources :items, only: [:index, :show] do
+          get '/invoice_items', to: 'invoice_items#index'
+          get '/merchant', to: 'merchant#show'
         end
       end
 
